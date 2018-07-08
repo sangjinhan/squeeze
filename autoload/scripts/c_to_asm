@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+CC=${CC:=cc}
+FILE=$1
+shift 1
+
+$CC -g -S $FILE -o $TMPDIR/output.s $*
+cat $TMPDIR/output.s
